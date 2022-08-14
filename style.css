@@ -283,6 +283,11 @@ hr {
     letter-spacing: 9px;
 }
 
+.pattern {
+    width: 100%;
+    min-height: auto;
+    max-height: 100%;
+}
 
 /* Other */
 .links {
@@ -439,7 +444,12 @@ header {
         }
     }
 
-
+@media only screen and (max-width: 1024px) {
+    .main {
+        margin-top: 150px;
+        margin-bottom: 50px;
+    }
+}
 
 /* Banner */
 .banner {
