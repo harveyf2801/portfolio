@@ -11,8 +11,12 @@
     </path>
     <style>
         @media (prefers-color-scheme: dark) {
-            <!-- rect { fill: #000000; } -->
-            path { fill: #ffffff; }
+            <!-- rect { fill: #EEEEEE; } -->
+            path { fill: #EEEEEE; }
+        }
+        @media (prefers-color-scheme: light) {
+            <!-- rect { fill: #111111; } -->
+            path { fill: #111111; }
         }
     </style>
 </svg>
