@@ -1,93 +1,185 @@
-// Menu open function
+/* - HAMBURGER FUNCTIONS - */
+// Hamburger menu open function
 let menuopen = false;
 const menu = document.querySelectorAll("nav,.hamburger,.menu-text");
+
 function toggleMenu() {
-    menu.forEach(element => {
-        element.classList.toggle("open");
-    });
-    menuopen = !menuopen;
+	menu.forEach(element => {
+		element.classList.toggle("open");
+	});
+	menuopen = !menuopen;
 }
 
-// Closing navigation if the window width is resized
+// Closing hamburger navigation if the window width is resized
 window.addEventListener('resize', (event) => {
-    if (window.innerWidth >= 1024 && menuopen) {
-        toggleMenu();
-    }
+	if (window.innerWidth >= 1024 && menuopen) {
+		toggleMenu();
+	}
 });
-
-
-
 
 
 /* - SCROLL FUNCTIONS - */
 window.onscroll = function() {
-    const currentScroll = window.pageYOffset;
-    topTopScroll(currentScroll);
-    navShow(currentScroll);
+	const currentScroll = window.pageYOffset;
+	topTopScroll(currentScroll);
+	navShow(currentScroll);
 };
-
 
 // Showing navigation if the window is scrolled up
 let lastScroll = 0;
 const navbar = document.querySelector(".nav-bar");
 
 function navShow(currentScroll) {
-    if (!menuopen) {
-        if (currentScroll <= 0) {
-            navbar.classList.remove("scroll-up");
-        }
-        if (currentScroll > lastScroll && !navbar.classList.contains("scroll-down")) {
-            navbar.classList.remove("scroll-up");
-            navbar.classList.add("scroll-down");
-        }
-        if (currentScroll < lastScroll && navbar.classList.contains("scroll-down")) {
-            navbar.classList.remove("scroll-down");
-            navbar.classList.add("scroll-up");
-        }
-    }
-    lastScroll = currentScroll;
+	if (!menuopen) {
+		if (currentScroll <= 0) {
+			navbar.classList.remove("scroll-up");
+		}
+		if (currentScroll > lastScroll && !navbar.classList.contains("scroll-down")) {
+			navbar.classList.remove("scroll-up");
+			navbar.classList.add("scroll-down");
+		}
+		if (currentScroll < lastScroll && navbar.classList.contains("scroll-down")) {
+			navbar.classList.remove("scroll-down");
+			navbar.classList.add("scroll-up");
+		}
+	}
+	lastScroll = currentScroll;
 }
 
 // Show the 'go to top' button when the windows scrolled down 20px from the top
 toTopBtn = document.getElementById("to-top");
+
 function topTopScroll(currentScroll) {
-    if (currentScroll > 20 || currentScroll > 20) {
-        toTopBtn.style.display = "block";
-    } else {
-        toTopBtn.style.display = "none";
-    }
+	if (currentScroll > 20 || currentScroll > 20) {
+		toTopBtn.style.display = "block";
+	} else {
+		toTopBtn.style.display = "none";
+	}
 }
 
 // Scroll to the top of the document when the to-top button is pressed
 function toTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+}
+
+// Dark / Light mode
+themeModeBtn = document.getElementById("theme-mode");
+themeModeSymbol = document.getElementById("theme-symbol");
+let newColorScheme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? "dark" : "light";
+let systemColorChange = true;
+changeColorTheme();
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    newColorScheme = event.matches ? "dark" : "light";
+	systemColorChange = true;
+	changeColorTheme();
+});
+
+function changeColorTheme() {
+
+	if ( systemColorChange == false ) {
+
+		if (newColorScheme == "dark") {
+			newColorScheme = "light";
+		} else {
+			newColorScheme = "dark";
+		}
+
+	} else {
+		systemColorChange = false;
+	}
+
+	document.documentElement.setAttribute("data-theme", newColorScheme);
+	themeModeSymbol.innerHTML = newColorScheme+"_mode";
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Observer Functions */
 
 const section = document.querySelectorAll('.fadingsection');
-
 const observer = new IntersectionObserver((entries) => {
-    for(const entry of entries) {
-        if(entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        } else {
-            entry.target.classList.remove('visible');
-        }
-    }
-}, { threshold: 1.0, rootMargin: '20%' })
-
+	for (const entry of entries) {
+		if (entry.isIntersecting) {
+			entry.target.classList.add('visible');
+		} else {
+			entry.target.classList.remove('visible');
+		}
+	}
+}, {
+	threshold: 0,
+	rootMargin: '0px 0px -250px 0px'
+})
 section.forEach(el => observer.observe(el));
+
+
+/* Typewriting effect */
+function setupTypewriter(t) {
+	var HTML = t.innerHTML;
+
+	t.innerHTML = "";
+
+	var cursorPosition = 0,
+	tag = "",
+	writingTag = false,
+	tagOpen = false,
+	typeSpeed = 100,
+	tempTypeSpeed = 0;
+
+	var type = function() {
+
+		if (writingTag === true) {
+			tag += HTML[cursorPosition];
+		}
+
+		if (HTML[cursorPosition] === "<") {
+			tempTypeSpeed = 0;
+			if (tagOpen) {
+				tagOpen = false;
+				writingTag = true;
+			} else {
+				tag = "";
+				tagOpen = true;
+				writingTag = true;
+				tag += HTML[cursorPosition];
+			}
+		}
+
+		if (!writingTag && tagOpen) {
+			tag.innerHTML += HTML[cursorPosition];
+		}
+		if (!writingTag && !tagOpen) {
+			if (HTML[cursorPosition] === " ") {
+				tempTypeSpeed = 0;
+			} else {
+				tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+			}
+			t.innerHTML += HTML[cursorPosition];
+		}
+
+		if (writingTag === true && HTML[cursorPosition] === ">") {
+			tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+			writingTag = false;
+			if (tagOpen) {
+				var newSpan = document.createElement("span");
+				t.appendChild(newSpan);
+				newSpan.innerHTML = tag;
+				tag = newSpan.firstChild;
+			}
+		}
+
+		cursorPosition += 1;
+		if (cursorPosition < HTML.length - 1) {
+			setTimeout(type, tempTypeSpeed);
+		}
+
+	};
+
+	return {
+		type: type
+	};
+}
+
+// var typer = document.getElementById('typewriter');
+// typewriter = setupTypewriter(typewriter);
+// typewriter.type();

@@ -74,10 +74,10 @@
                     <li><a class="fromLeft" href="about.html" data-page="about">About me</a></li>
                     <li><a class="fromLeft" href="contact.html" data-page="contact">Contact</a></li>
                     <hr>
-                    <li><a href="https://www.linkedin.com/in/harveyfretwell/" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://github.com/harveyf2801" target="_blank">GitHub</a></li>
-                    <li><a href="https://gitlab.com/harveyf2801" target="_blank">GitLab</a></li>
-                    <li><a href="https://www.instagram.com/prodbyharveyf/" target="_blank">Instagram</a></li>
+                    <li><a class="fromRight" href="https://www.linkedin.com/in/harveyfretwell/" target="_blank">LinkedIn</a></li>
+                    <li><a class="fromRight" href="https://github.com/harveyf2801" target="_blank">GitHub</a></li>
+                    <li><a class="fromRight" href="https://gitlab.com/harveyf2801" target="_blank">GitLab</a></li>
+                    <li><a class="fromRight" href="https://www.instagram.com/prodbyharveyf/" target="_blank">Instagram</a></li>
                 </ul>
             </nav>
             <button type="submit" onclick="toggleMenu()" class="menu">
@@ -94,7 +94,7 @@
 
         <main class="flex column">
             <section class="banner">
-                <div>
+                <div class="fadingsection fromLeft">
                     <h3>Harvey Fretwell</h3>
                     <h1>Hey there!</h1>
                     <p>
@@ -106,7 +106,7 @@
                         learn more in the field of Deep Learning, GANNs and AI in general.
                     </p>
                 </div>
-                <div class="pattern">
+                <div class="pattern fadingsection fromRight">
                     <img src="/assets/images/grey-pattern.jpg" alt="pattern">
                 </div>
             </section>
@@ -114,7 +114,7 @@
         
         <br>
 
-        <footer class="flex column container">
+        <footer class="flex column">
             <hr>
             <section>
                 <div>
@@ -157,7 +157,7 @@
             </section>
 
             <div class="copyright">
-                <a href="/" class="internal" data-page="home">
+                <a href="/" class="internal link-in-text" data-page="home">
                     <svg class="logo lighten" data-name="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 100 100">
                         <style>
                             .lighten {
@@ -171,6 +171,10 @@
                 <p class="fs-small fw-light">© 2022 Harvey Fretwell.<br>Leicester | Basingstoke | Birmingham,   England.</p>
             </div>
         </footer>
+
+        <button onclick="changeColorTheme()" id="theme-mode" title="Change colour theme">
+            <span id="theme-symbol" class="material-symbols-outlined">light_mode</span>
+       </button>
 
         <button onclick="toTop()" id="to-top" title="Go to top">
             <span class="material-symbols-outlined">north</span>
