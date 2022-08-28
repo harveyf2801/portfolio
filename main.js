@@ -180,6 +180,6 @@ function setupTypewriter(t) {
 	};
 }
 
-// var typer = document.getElementById('typewriter');
-// typewriter = setupTypewriter(typewriter);
-// typewriter.type();
+var typer = document.getElementById('typewriter');
+typewriter = setupTypewriter(typewriter);
+typewriter.type();
