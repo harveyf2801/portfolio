@@ -148,6 +148,7 @@ html {
 /* Standard Elements */
 html, body {
 	height: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -159,7 +160,6 @@ body {
 	font-weight: var(--fw-semi-light);
 	letter-spacing: normal;
 	color: var(--clr-text);
-	overflow-x: hidden;
     background-color: var(--clr-background);
     line-height: 2rem;
     white-space: wrap;
@@ -925,7 +925,7 @@ header {
     }
 }
 #typewriter {
-    font-size: 2rem;
+    font-size: var(--fs-body);
 }
 #typewriter:after {
         content: '|';
