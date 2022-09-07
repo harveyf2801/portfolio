@@ -1,6 +1,7 @@
 html {
     /* 0.1 rem == 1px */
     font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 :root {
@@ -148,7 +149,6 @@ html {
 /* Standard Elements */
 html, body {
 	height: 100%;
-    overflow-x: hidden;
 }
 
 body {
