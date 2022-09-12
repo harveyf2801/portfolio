@@ -8,10 +8,10 @@
         <title>{{ page.title }}</title>
 
         <!-- Dynamic Favicon -->
-        <link rel="icon" type="image/svg+xml" href="{% link /assets/favicons/404-icon.svg %}">
+        <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicons/404-icon.svg?' | relative_url }}">
 
         <!-- SVG animation -->
-        <link rel="stylesheet" href="{% link /assets/css/glitchstyle.css %}">
+        <link rel="stylesheet" href="{{ '/assets/css/glitchstyle.css' | relative_url }}">
     </head>
 
     <body>
