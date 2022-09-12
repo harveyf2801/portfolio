@@ -3,7 +3,6 @@
 # only Main files contain this front matter, not partials.
 ---
 
-$baseurl: "{{ site.baseurl }}";
 @import "reset";
 
 @-webkit-keyframes "glitch-background" {
@@ -365,7 +364,7 @@ section {
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	background: url('#{$baseurl}/assets/images/glitch-background.jpg');
+	background: url({{ '/assets/images/glitch-background.jpg' | relative_link }});
 	background-size: cover;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -387,7 +386,7 @@ section {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: url('#{$baseurl}/assets/images/glitch-background.jpg');
+		background: url({{ '/assets/images/glitch-background.jpg' | relative_link }});
 		background-size: cover;
 		opacity: 0.4;
 		mix-blend-mode: hard-light;
