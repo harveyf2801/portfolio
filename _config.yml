@@ -7,4 +7,4 @@ permalink: date
 
 sass:
   sass_dir: _sass
-  style: compressed
+  style: compact # possible values: nested expanded compact compressed
