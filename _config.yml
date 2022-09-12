@@ -1,2 +1,6 @@
 name: Portfolio | Harvey Fretwell
 markdown: kramdown
+
+url: https://harveyf2801.github.io
+baseurl: /portfolio
+permalink: date
