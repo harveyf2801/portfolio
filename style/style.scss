@@ -1013,7 +1013,7 @@ nav.open {
 
 /* For smaller screens */
 @media (min-width: 800px) {
-	&:root {
+	:root {
 		--fs-body: var(--fs-500);
 		--fs-primary-heading: var(--fs-900);
 		--fs-secondary-heading: var(--fs-800);
