@@ -4,3 +4,7 @@ markdown: kramdown
 url: https://harveyf2801.github.io
 baseurl: /portfolio
 permalink: date
+
+sass:
+  sass_dir: _sass
+  style: compressed
