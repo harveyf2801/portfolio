@@ -495,26 +495,3 @@ a {
 		}
 	}
 }
-@media (prefers-reduced-motion: reduce) {
-	* {
-		-webkit-animation: none !important;
-		animation: none !important;
-		-webkit-transition: none !important;
-		-o-transition: none !important;
-		transition: none !important;
-		&:before {
-			-webkit-animation: none !important;
-			animation: none !important;
-			-webkit-transition: none !important;
-			-o-transition: none !important;
-			transition: none !important;
-		}
-		&:after {
-			-webkit-animation: none !important;
-			animation: none !important;
-			-webkit-transition: none !important;
-			-o-transition: none !important;
-			transition: none !important;
-		}
-	}
-}
