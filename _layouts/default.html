@@ -11,21 +11,21 @@
         <meta name="description" content="My portfolio">
         
         <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/favicons/apple-touch-icon.png?">
-        <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicons/favicon-32x32.png?">
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicons/favicon-16x16.png?">
-        <link rel="manifest" href="{{ site.baseurl }}/assets/favicons/site.webmanifest?">
-        <link rel="mask-icon" href="{{ site.baseurl }}/assets/favicons/safari-pinned-tab.svg?" color="#111111">
-        <link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicons/favicon.ico?">
+        <link rel="apple-touch-icon" sizes="180x180" href=""{% link /assets/favicons/apple-touch-icon.png? %}">
+        <link rel="icon" type="image/png" sizes="32x32" href=""{% link /assets/favicons/favicon-32x32.png? %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% link /assets/favicons/favicon-16x16.png? %}">
+        <link rel="manifest" href="{% link /assets/favicons/site.webmanifest? %}">
+        <link rel="mask-icon" href="{% link /assets/favicons/safari-pinned-tab.svg? %}" color="#111111">
+        <link rel="shortcut icon" href="{% link /assets/favicons/favicon.ico? %}">
         <meta name="apple-mobile-web-app-title" content="Portfolio">
         <meta name="application-name" content="Portfolio">
         <meta name="msapplication-TileColor" content="#2b5797">
-        <meta name="msapplication-config" content="{{ site.baseurl }}/assets/favicons/browserconfig.xml">
+        <meta name="msapplication-config" content="{% link /assets/favicons/browserconfig.xml %}">
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEEEEE">
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111">
 
         <!-- Dynamic Favicon -->
-        <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicons/favicon.svg?">
+        <link rel="icon" type="image/svg+xml" href="{% link /assets/favicons/favicon.svg? %}">
 
         <!-- Open Graph protocol -->
         <meta property="og:locale" content="en_GB" />        
@@ -36,7 +36,7 @@
         <meta property="og:type" content="website">
         
         <!-- !!! To Do !!! -->
-        <meta property="og:image" content="{{ site.baseurl }}/assets/images/grey-pattern.jpg">
+        <meta property="og:image" content="{% link /assets/images/grey-pattern.jpg %}">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
 
@@ -49,7 +49,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
         <!-- CSS -->
-        <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+        <link rel="stylesheet" href="{% link /assets/css/main.css %}">
     </head>
     <body>
         <header class="nav-bar">
@@ -65,9 +65,9 @@
             </a>
             <nav>
                 <ul role="list" class="nav-list" aria-label="primary links">
-                    <li><a class="fromLeft" href="{{ site.baseurl }}/projects.html" data-page="projects">Projects</a></li>
-                    <li><a class="fromLeft" href="{{ site.baseurl }}/about.html" data-page="about">About me</a></li>
-                    <li><a class="fromLeft" href="{{ site.baseurl }}/contact.html" data-page="contact">Contact</a></li>
+                    <li><a class="fromLeft" href="{% link /projects.html %}" data-page="projects">Projects</a></li>
+                    <li><a class="fromLeft" href="{% link /about.html %}" data-page="about">About me</a></li>
+                    <li><a class="fromLeft" href="{% link /contact.html %}" data-page="contact">Contact</a></li>
                     <hr>
                     <li><a class="fromRight" href="https://www.linkedin.com/in/harveyfretwell/" target="_blank">LinkedIn</a></li>
                     <li><a class="fromRight" href="https://github.com/harveyf2801" target="_blank">GitHub</a></li>
@@ -156,5 +156,5 @@
         </button>
 
     </body>
-    <script src="{{ site.baseurl }}/main.js"></script>
+    <script src="{% link /main.js %}"></script>
 </html>
