@@ -52,100 +52,13 @@
         <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     </head>
     <body>
-        <header class="nav-bar">
-            <a href="{{ site.baseurl }}" class="full-logo" data-page="home">
-                <svg class="logo" data-name="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 100 100">
-                    <circle class="logo-circle" cx="50" cy="50" r="46"/>
-                    <text class="logo-h" transform="translate(26.56 76.47)">h</text>
-                </svg>
-                <svg class="logo-text" data-name="logo-text" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="167px" height="46px" viewBox="0 0 363 100">
-                    <text class="logo-text-name" transform="translate(0 70)">Harvey Fretwell</text> <!--transform="translate(0 52)"-->
-                    <!-- <text class="logo-text-role" transform="translate(0 93)">SOFTWARE ENGINEER</text> -->
-                </svg>
-            </a>
-            <nav>
-                <ul role="list" class="nav-list" aria-label="primary links">
-                    <li><a class="fromLeft" href="{{ '/projects.html' | relative_url }}" data-page="projects">Projects</a></li>
-                    <li><a class="fromLeft" href="{{ '/about.html' | relative_url }}" data-page="about">About me</a></li>
-                    <li><a class="fromLeft" href="{{ '/contact.html' | relative_url }}" data-page="contact">Contact</a></li>
-                    <hr>
-                    <li><a class="fromRight" href="https://www.linkedin.com/in/harveyfretwell/" target="_blank">LinkedIn</a></li>
-                    <li><a class="fromRight" href="https://github.com/harveyf2801" target="_blank">GitHub</a></li>
-                    <li><a class="fromRight" href="https://gitlab.com/harveyf2801" target="_blank">GitLab</a></li>
-                    <li><a class="fromRight" href="https://www.instagram.com/prodbyharveyf/" target="_blank">Instagram</a></li>
-                </ul>
-            </nav>
-            <button type="submit" onclick="toggleMenu()" class="menu">
-                <span class="menu-text">MENU</span>
-                <div class="hamburger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </div>
-            </button>
-        </header>
+        {% include header.html %}
 
         <br>
       
         {{ content }}
 
-        <footer class="flex column">
-            <hr>
-            <section>
-                <div>
-                    <h4>Contact <br>information —</h4>
-                    <p>Feel free to reach out to me any time. I prefer to talk over email.</p>
-                    <ul class="links" role="list" aria-label="contact links">
-                        <li><span class="text-light">E: </span><a href="mailto:hfretwell@icloud.com?subject=Contact from portfolio website&body=Hi Harvey,&nbsp I love your website!&nbsp">hfretwell@icloud.com</a></li>
-                        <li><span class="text-light">P: </span><a href="tel:+447377693636;">07377 693636</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4>Latest <br>projects —</h4>
-                    <ul class="links" role="list" aria-label="project links">
-                        <li><a href="{{ '/projects/apps' | relative_url }}" class="special internal">Apps</a></li>
-                        <li><a href="{{ '/projects/audiofx' | relative_url }}" class="special internal">Audio FX</a></li>
-                        <li><a href="{{ '/projects/websites' | relative_url }}" class="special internal">Websites</a></li>
-                        <li><a href="{{ '/projects/test-automatio' | relative_url }}" class="special internal">Test Automation</a></li>
-                        <li><a href="{{ '/projects' | relative_url }}" class="special internal">All projects</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Current <br>status —</h4>
-                    <p>
-                        I’m currently working at Audient as a Quality Assurance Automation Engineer.
-                        This role is part of my internship at BCU.
-                    </p>
-                </div>
-
-                <div>
-                    <h4>Follow <br>me on —</h4>
-                    <ul class="links" role="list" aria-label="social links">
-                        <li><a href="https://www.linkedin.com/in/harveyfretwell/" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://github.com/harveyf2801" target="_blank">GitHub</a></li>
-                        <li><a href="https://gitlab.com/harveyf2801" target="_blank">GitLab</a></li>
-                        <li><a href="https://www.instagram.com/prodbyharveyf/" target="_blank">Instagram</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <div class="copyright">
-                <a href="{{ site.baseurl }}" class="internal link-in-text" data-page="home">
-                    <svg class="logo lighten" data-name="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="46px" height="46px" viewBox="0 0 100 100">
-                        <style>
-                            .lighten {
-                                filter: contrast(0%);
-                            }
-                        </style>
-                        <circle class="logo-circle" cx="50" cy="50" r="46"/>
-                        <text class="logo-h" transform="translate(26.56 76.47)">h</text>
-                    </svg>
-                </a>
-                <p class="fs-small fw-light">© 2022 Harvey Fretwell.<br>Leicester | Basingstoke | Birmingham,   England.</p>
-            </div>
-        </footer>
+        {% include footer.html %}
 
         <button onclick="changeColorTheme()" id="theme-mode" title="Change colour theme">
             <span id="theme-symbol" class="material-symbols-outlined">light_mode</span>
