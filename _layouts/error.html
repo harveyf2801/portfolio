@@ -13,6 +13,12 @@
         <!-- SVG animation -->
         <link rel="stylesheet" href="{{ '/assets/css/glitchstyle.css' | relative_url }}">
     </head>
+    
+    <style>
+        main, main::before {
+            url("{{ '/assets/images/glitch-background.jpg' | relative_url }}");
+        }
+    </style>
 
     <body>
         {{ content }}
