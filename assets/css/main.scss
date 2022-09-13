@@ -895,8 +895,11 @@ nav.open {
 	-ms-flex-pack: center;
 	justify-content: center;
 	margin-top: 2rem;
-	>* {
-		border: none;
+	>* :not(button){
+		border-bottom: var(--clr-text) solid 0.2rem;
+	}
+	>*{
+		outline: none;
 		background-color: transparent;
 		padding: 0.8rem;
 		border-bottom: var(--clr-text) solid 0.2rem;

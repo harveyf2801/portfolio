@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
 
         <!-- Title Bar -->
         <title>{{ page.title }}</title>
 
         <!-- Dynamic Favicon -->
-        <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicons/404-icon.svg?">
+        <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicons/404-icon.svg?' | relative_url }}">
 
         <!-- SVG animation -->
         <link rel="stylesheet" href="{{ '/assets/css/glitchstyle.css' | relative_url }}">
     </head>
+    
+    <style>
+        main, main::before {
+            background: url("{{ '/assets/images/glitch-background.jpg' | relative_url }}");
+        }
+    </style>
 
     <body>
         {{ content }}

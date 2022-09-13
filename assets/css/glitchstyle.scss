@@ -3,7 +3,6 @@
 # only Main files contain this front matter, not partials.
 ---
 
-$baseurl: "{{ site.baseurl }}";
 @import "reset";
 
 @-webkit-keyframes "glitch-background" {
@@ -361,11 +360,10 @@ body {
 	color: #d9d2d2;
 	font-family: Helvetica;
 }
-section {
+main {
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	background: url('#{$baseurl}/assets/images/glitch-background.jpg');
 	background-size: cover;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -387,7 +385,6 @@ section {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: url('#{$baseurl}/assets/images/glitch-background.jpg');
 		background-size: cover;
 		opacity: 0.4;
 		mix-blend-mode: hard-light;
@@ -493,29 +490,6 @@ a {
 		&:after {
 			-webkit-animation: glitch-button 2s infinite linear alternate;
 			animation: glitch-button 2s infinite linear alternate;
-		}
-	}
-}
-@media (prefers-reduced-motion: reduce) {
-	* {
-		-webkit-animation: none !important;
-		animation: none !important;
-		-webkit-transition: none !important;
-		-o-transition: none !important;
-		transition: none !important;
-		&:before {
-			-webkit-animation: none !important;
-			animation: none !important;
-			-webkit-transition: none !important;
-			-o-transition: none !important;
-			transition: none !important;
-		}
-		&:after {
-			-webkit-animation: none !important;
-			animation: none !important;
-			-webkit-transition: none !important;
-			-o-transition: none !important;
-			transition: none !important;
 		}
 	}
 }

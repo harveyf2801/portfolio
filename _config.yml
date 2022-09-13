@@ -1,9 +1,10 @@
 name: Portfolio | Harvey Fretwell
 markdown: kramdown
 
-url: https://harveyf2801.github.io
+url: https://harveyf2801.github.io/portfolio
 baseurl: /portfolio
-permalink: date
+
+include: ['_pages']
 
 sass:
   sass_dir: _sass
