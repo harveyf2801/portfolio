@@ -31,8 +31,9 @@ const navbar = document.querySelector(".nav-bar");
 
 function navShow(currentScroll) {
 	if (!menuopen) {
-		if (currentScroll <= 0) {
+		if (currentScroll <= 0 && !navbar.classList.contains("scroll-down")) {
 			navbar.classList.remove("scroll-up");
+			navbar.classList.add("scroll-down"))
 		}
 		if (currentScroll > lastScroll && !navbar.classList.contains("scroll-down")) {
 			navbar.classList.remove("scroll-up");
