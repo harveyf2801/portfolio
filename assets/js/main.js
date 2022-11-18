@@ -19,11 +19,11 @@ window.addEventListener('resize', (event) => {
 
 
 /* - SCROLL FUNCTIONS - */
-window.onscroll = function() {
+window.addEventListener('scroll', () => {
 	const currentScroll = window.pageYOffset;
 	topTopScroll(currentScroll);
 	navShow(currentScroll);
-};
+});
 
 // Showing navigation if the window is scrolled up
 let lastScroll = 0;
