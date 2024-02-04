@@ -125,8 +125,8 @@
 	font-family: var(--font-family-logo);
 	font-weight: var(--fw-bold);
 	font-size: var(--step-3);
-	border-bottom: var(--clr-text-light) solid;
-	border-radius: 20%;
+	// border-bottom: var(--clr-text-light) solid;
+	// border-radius: 20%;
 	padding-inline: 1rem 1rem;
 }
 .flex {
@@ -155,6 +155,6 @@
 	flex-wrap: nowrap;
 }
 .outline {
-	border: #111111 solid 1px;
+	border: #cc1616 solid 1px;
 	border-radius: 2px;
 }

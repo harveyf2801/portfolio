@@ -21,7 +21,7 @@
 
 /* FONT SIZE VARIABLES USING UTOPIA */
 
-/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,2560,34,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/type/calculator/?c=320,16,1.2,2560,20,1.25,6,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
 
     
 --step--2: clamp(0.6944rem, 0.6794rem + 0.0754vi, 0.8rem);
@@ -76,8 +76,8 @@
     /* @link https://www.happyhues.co/palettes/4 */
 
     /* THEME COLOURS */
-    --color-main: #7f5af0;
-    --color-tertiary: #2cadb6;
+    --color-main: #7f5af0ba;
+    --color-tertiary: #2cadb6c5;
 
     --color-light-3: #EEEEEE;
     --color-light-2: #9d9c9c;

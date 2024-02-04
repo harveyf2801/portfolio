@@ -262,11 +262,14 @@
 	gap: 8rem;
 }
 .filled-container {
-	background-color: var(--clr-overlay) !important;
+	background-color: var(--color-main) !important;
 	padding: 2rem 4rem;
 	margin-top: 8rem;
 	border-radius: 5px;
 	>p {
+		color: var(--clr-text-overlay) !important;
+	}
+	>h5 {
 		color: var(--clr-text-overlay) !important;
 	}
 }
@@ -292,7 +295,7 @@
 	column-gap: 2rem;
 	>li {
 		list-style-type: none;
-		border: var(--clr-overlay) solid 0.3rem;
+		border: var(--color-tertiary) solid 0.3rem;
 		color: var(--clr-overlay);
 		padding: 1rem 2rem;
 		margin-bottom: 1.5rem;
@@ -307,9 +310,9 @@
 		}
 		&:hover {
 			opacity: 1;
-			border: var(--clr-text-overlay) solid 0.3rem;
+			border: var(--color-tertiary) solid 0.3rem;
 			color: var(--clr-text-overlay);
-			background-color: var(--clr-overlay);
+			background-color: var(--color-tertiary);
 			-webkit-transform: translateX(3.0rem);
 			-ms-transform: translateX(3.0rem);
 			transform: translateX(3.0rem);

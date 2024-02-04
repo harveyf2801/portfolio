@@ -67,21 +67,12 @@ and this is my portfolio ...">
         <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     </head>
     <body>
-        {% include header.html %}
-
-        <br>
       
         {{ content }}
-
-        {% include footer.html %}
 
         <button onclick="changeColorTheme()" id="theme-mode" title="Change colour theme">
             <span id="theme-symbol" class="material-symbols-outlined">light_mode</span>
        </button>
-
-        <button onclick="toTop()" id="to-top" title="Go to top">
-            <span class="material-symbols-outlined">north</span>
-        </button>
 
     </body>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
