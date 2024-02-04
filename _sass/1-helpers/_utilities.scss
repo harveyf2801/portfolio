@@ -1,0 +1,160 @@
+/* Utility Classes */
+.text-light-shades {
+	color: var(--clr-light-shades);
+}
+.text-light-accent {
+	color: var(--clr-light-accent);
+}
+.text-main-brand {
+	color: var(--clr-main-brand);
+}
+.text-dark-accent {
+	color: var(--clr-dark-accent);
+}
+.text-dark-shades {
+	color: var(--clr-dark-shades);
+}
+.bg-light-shades {
+	background-color: var(--clr-light-shades);
+}
+.bg-light-accent {
+	background-color: var(--clr-light-accent);
+}
+.bg-main-brand {
+	background-color: var(--clr-main-brand);
+}
+.bg-dark-accent {
+	background-color: var(--clr-dark-accent);
+}
+.bg-dark-shades {
+	background-color: var(--clr-dark-shades);
+}
+.fw-light {
+	font-weight: var(--fw-light);
+}
+.fw-regular {
+	font-weight: var(--fw-regular);
+}
+.fw-semi-bold {
+	font-weight: var(--fw-semi-bold);
+}
+.fw-bold {
+	font-weight: var(--fw-bold);
+}
+.fs-primary-heading {
+	font-size: var(--fs-primary-heading);
+}
+.fs-secondary-heading {
+	font-size: var(--fs-secondary-heading);
+}
+.fs-xxs {
+	font-size: var(--step--2);
+}
+.fs-xs {
+	font-size: var(--step--1);
+}
+.fs-small {
+	font-size: var(--step-0);
+}
+.fs-s {
+	font-size: var(--step-1);
+}
+.fs-medium {
+	font-size: var(--step-2);
+}
+.fs-ml {
+	font-size: var(--step-3);
+}
+.fs-large {
+	font-size: var(--step-4);
+}
+.fs-xl {
+	font-size: var(--step-5);
+}
+.fs-xxl {
+	font-size: var(--step-6);
+}
+
+/* Other */
+
+
+.button {
+	text-decoration: none;
+	border-radius: 0.5rem;
+	border: var(--clr-text) solid 0.2rem;
+	max-width: -webkit-fit-content;
+	max-width: -moz-fit-content;
+	max-width: fit-content;
+	padding: 1rem 2rem;
+	&:hover {
+		opacity: 0.8;
+		-webkit-transition: all var(--time-fast) ease;
+		-o-transition: all var(--time-fast) ease;
+		transition: all var(--time-fast) ease;
+		-webkit-transform: scale(98%);
+		-ms-transform: scale(98%);
+		transform: scale(98%);
+	}
+	&:active {
+		opacity: 0.4;
+		-webkit-transition: all var(--time-very-fast) ease;
+		-o-transition: all var(--time-very-fast) ease;
+		transition: all var(--time-very-fast) ease;
+	}
+}
+
+.link-in-text {
+	border: none;
+	&:after {
+		border: none;
+	}
+	&:before {
+		border: none;
+	}
+}
+
+.section {
+	width: 100%;
+	padding: 6rem 6% 5rem !important;
+}
+
+/* Basic inline components */
+
+.emphasis {
+	color: var(--clr-text);
+	font-family: var(--font-family-logo);
+	font-weight: var(--fw-bold);
+	font-size: var(--step-3);
+	border-bottom: var(--clr-text-light) solid;
+	border-radius: 20%;
+	padding-inline: 1rem 1rem;
+}
+.flex {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.row {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+.column {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+}
+.wrap {
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.nowrap {
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+}
+.outline {
+	border: #111111 solid 1px;
+	border-radius: 2px;
+}
