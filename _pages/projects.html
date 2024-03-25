@@ -4,22 +4,65 @@ permalink: /projects.html
 title: Projects | Portfolio | Harvey Fretwell
 name: projects
 ---
-              <main class="flex column">
-                  <section class="banner">
-                    <div>
-                        <h3>Harvey Fretwell</h3>
-<pre class="code-window"><code id="typewriter"><span class="comment-highlight">// Oops!</span>
-<span class="type-highlight">string</span> <span class="var-highlight">Sorry</span> = 
-<span class="string-highlight">"I think I've made a mistake :\"</span>&#59;
-</code>
-</pre>
-                        <p>
-                            Sorry, I’ve not finished designing this website yet. <br>Please come back in a few days in case I've fixed this error or contact me and let me know.
-                        </p>
-                        <p>
-                            In the meantime, why don’t you check out my 
-                            <a class='link-in-text' href="https://www.linkedin.com/in/harveyfretwell/" target="_blank">LinkedIn</a> or <a class='link-in-text' href="https://github.com/harveyf2801" target="_blank">GitHub.</a>
-                        </p>
-                    </div>
-                  </section>
-              </main>
+<main class="flex column">
+    <section class="banner" id="audiofx">
+        <div class="fadingsection fromLeft">
+            <h3>Projects | Audio FX</h3>
+            <h1>EQ Plugin</h1>
+            <p>
+                This project implements an audio equaliser using JUCE and C++. By default, it includes <b>3 peaking bands</b>, <b>2 shelves</b>, and <b>2 cut bands</b>. The peaking bands are dynamically implemented, allowing for easy adjustment of the number of bands. All of the following plugins also include a save / load functionality along with an undo / redo manager.
+            </p>
+            <p>
+                All filter coefficients are calculated manually and applied using a <b>Transposed Direct Form II</b> BiQuad Filter. An interactive MATLAB and Python prototype demo is available on <a class='link-in-text' href="https://github.com/harveyf2801/AudioFX-EQ/blob/main/Demonstration/DemonstrationScript.ipynb" target="_blank">GitHub.</a>
+            </p>
+            <a class="fromLeft" href="https://github.com/harveyf2801/AudioFX-EQ/blob/main/">Go to this repository</a>
+        </div>
+        <div class="fadingsection fromRight">
+            <img decoding="async" src="https://github.com/harveyf2801/AudioFX-EQ/blob/main/Demonstration/EQ-demo.gif?raw=true" alt="EQ App Demonstration" width="100%" height="100%">
+        </div>
+    </section>
+    <section class="banner">
+        <!-- <div class="fadingsection fromLeft">
+            <img src="https://github.com/harveyf2801/AudioFX-Compressor/blob/main/Demonstration/Compressor-demo.gif?raw=true" alt="Compressor App Demonstration" width="100%" height="100%">
+        </div> -->
+        <div class="fadingsection fromRight">
+            <h1>Compressor Plugin</h1>
+            <p>
+                An audio dynamic range compressor is implemented using JUCE and C++. It includes parameters such as <b>Threshold</b>, <b>Ratio</b>, <b>Attack</b>, <b>Release</b>, <b>Makeup Gain</b> and an adjustable <b>knee</b> parameter for fine-tuning compression characteristics.
+            </p>
+            <p>
+                A custom FIFO buffer has been implemented to analyse the audio input and apply compression using a Peak-RMS based detection method. An interactive MATLAB and Python prototype demo is available on <a class='link-in-text' href="https://github.com/harveyf2801/AudioFX-Compressor/blob/main/Demonstration/DemonstrationScript.ipynb" target="_blank">GitHub.</a>
+            </p>
+            <a class="fromLeft" href="https://github.com/harveyf2801/AudioFX-Compressor/blob/main/">Go to this repository</a>
+        </div>
+    </section>
+
+    <section class="banner" id="apps">
+        <div class="fadingsection fromLeft">
+            <h3>Projects | Apps</h3>
+            <h1>CRTN Calculator</h1>
+            <p>
+                This project provides a prototype application in MATLAB app designer to calculate the road traffic noise based upon the equations in the 1988 <a class="link-in-text" href="https://www.bradford.gov.uk/Documents/Hard%20Ings%20Road%20improvement%20scheme/2b%20Compulsory%20Purchase%20Order%20and%20">CRTN documentation.</a>
+            </p>
+            <p>
+                LDEN calculations with customisable dB penalties. It includes correction features for gradient, angle, HGV percentage, road surface, and distance measured, ensuring accurate assessments. Users can view average and maximum LDEN and LA10 values and benefit from auto-fill, save/load data, reset, and help tools for streamlined noise analysis.
+            </p>
+            <a class="fromLeft" href="https://gitlab.com/harveyf2801/crtn-calculator">Go to this repository</a>
+        </div>
+        <!-- <div class="fadingsection fromLeft">
+            <img src="https://gitlab.com/harveyf2801/crtn-calculator/blob/main/Demonstration/crtn-demo.gif?raw=true" alt="Compressor App Demonstration" width="100%" height="100%">
+        </div> -->
+    </section>
+    <section class="banner">
+        <div class="fadingsection fromRight">
+            <h1>Reverb Calculator</h1>
+            <p>
+                Providing a prototype application in MATLAB app designer to to calculate the reverb times for a set of frequencies based on a rooms dimensions and materials.
+            </p>
+            <p>
+                This project compares both convolutional reverberation using RIR and algorithmic reverberation using absorption coefficients.
+            </p>
+            <a class="fromLeft" href="https://gitlab.com/harveyf2801/reverb-calculator">Go to this repository</a>
+        </div>
+    </section>
+</main>
