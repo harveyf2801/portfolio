@@ -154,6 +154,11 @@
 	-ms-flex-wrap: nowrap;
 	flex-wrap: nowrap;
 }
+.justify-center {
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
 .outline {
 	border: #cc1616 solid 1px;
 	border-radius: 2px;
