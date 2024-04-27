@@ -163,3 +163,16 @@
 	border: #cc1616 solid 1px;
 	border-radius: 2px;
 }
+
+.sticky-element {
+	position: -webkit-sticky; /* For Safari */
+	position: sticky;
+	top: 0;
+	z-index: 1000; /* Set a high z-index value to keep it at the front */
+  }
+
+  .sticky {
+	position: -webkit-sticky; /* For Safari */
+	position: sticky;
+	top: 0;
+  }

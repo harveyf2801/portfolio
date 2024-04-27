@@ -19,9 +19,12 @@ window.addEventListener('resize', (event) => {
 
 
 /* - SCROLL FUNCTIONS - */
+// Show the 'go to top' button when the windows scrolled down 20px from the top
+let toTopBtn = document.getElementById("to-top");
+
 window.addEventListener('scroll', () => {
 	const currentScroll = window.pageYOffset;
-	topTopScroll(currentScroll);
+	toTopScroll(currentScroll);
 	navShow(currentScroll);
 });
 
@@ -30,31 +33,32 @@ let lastScroll = 0;
 const navbar = document.querySelector(".nav-bar");
 
 function navShow(currentScroll) {
-	if (!menuopen) {
-		if (currentScroll <= 0 && !navbar.classList.contains("scroll-down")) {
-			navbar.classList.remove("scroll-up");
-			navbar.classList.remove("scroll-down");
+	if (navbar){
+		if (!menuopen) {
+			if (currentScroll <= 0 && !navbar.classList.contains("scroll-down")) {
+				navbar.classList.remove("scroll-up");
+				navbar.classList.remove("scroll-down");
+			}
+			if (currentScroll > lastScroll && !navbar.classList.contains("scroll-down")) {
+				navbar.classList.remove("scroll-up");
+				navbar.classList.add("scroll-down");
+			}
+			if (currentScroll < lastScroll && navbar.classList.contains("scroll-down")) {
+				navbar.classList.remove("scroll-down");
+				navbar.classList.add("scroll-up");
+			}
 		}
-		if (currentScroll > lastScroll && !navbar.classList.contains("scroll-down")) {
-			navbar.classList.remove("scroll-up");
-			navbar.classList.add("scroll-down");
-		}
-		if (currentScroll < lastScroll && navbar.classList.contains("scroll-down")) {
-			navbar.classList.remove("scroll-down");
-			navbar.classList.add("scroll-up");
-		}
+		lastScroll = currentScroll;
 	}
-	lastScroll = currentScroll;
 }
 
-// Show the 'go to top' button when the windows scrolled down 20px from the top
-toTopBtn = document.getElementById("to-top");
-
-function topTopScroll(currentScroll) {
-	if (currentScroll > 20 || currentScroll > 20) {
-		toTopBtn.style.display = "block";
-	} else {
-		toTopBtn.style.display = "none";
+function toTopScroll(currentScroll) {
+	if (toTopBtn) {
+		if (currentScroll > 20 || currentScroll > 20) {
+			toTopBtn.style.display = "block";
+		} else {
+			toTopBtn.style.display = "none";
+		}
 	}
 }
 
@@ -181,6 +185,23 @@ function setupTypewriter(t) {
 	};
 }
 
+const refObserver = new IntersectionObserver(entries => {
+	entries.forEach(entry => {
+	  const stickyElement = entry.target;
+	  if (entry.isIntersecting) {
+		stickyElement.classList.add('sticky');
+	  } else {
+		stickyElement.classList.remove('sticky');
+	  }
+	});
+  });
+  
+  document.querySelectorAll('.sticky-element').forEach(element => {
+	refObserver.observe(element);
+  });
+
 var typer = document.getElementById('typewriter');
-typewriter = setupTypewriter(typer);
-typewriter.type();
+if (typer) {
+	typewriter = setupTypewriter(typer);
+	typewriter.type();
+}

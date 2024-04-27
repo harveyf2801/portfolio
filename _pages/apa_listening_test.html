@@ -109,7 +109,7 @@ name: listening_test
                             <h2>Test 1</h2>
                             <p>In the following section, you will listen to several sine waves. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
                             <br>
-                            <div class="filled-container">
+                            <div class="filled-container sticky-element">
                                 <h4 style="text-align: center;">Reference Audio:</h4>
                                 <audio controls>
                                     <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_sine.wav?raw=true" type="audio/mpeg">
@@ -257,7 +257,7 @@ name: listening_test
                             <h2>Test 2</h2>
                             <p>In the following section, you will listen to several snare samples. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
                             <br>
-                            <div class="filled-container">
+                            <div class="filled-container sticky-element">
                                 <h4 style="text-align: center;">Reference Audio:</h4>
                                 <audio controls>
                                     <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare1.wav?raw=true" type="audio/mpeg">
@@ -402,7 +402,7 @@ name: listening_test
                                 </div>
                                 <!-- Model -->
                                 <div class="flex column filled-container">
-                                    <h4 style="text-align: center;">G</h4>
+                                    <h4 style="text-align: center;">H</h4>
                                     <audio controls>
                                         <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/model_snare1.wav?raw=true" type="audio/mpeg">
                                         Your browser does not support the audio element.
@@ -424,7 +424,7 @@ name: listening_test
                             <h2>Test 3</h2>
                             <p>In the following section, you will listen to another set of snare samples. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
                             <br>
-                            <div class="filled-container">
+                            <div class="filled-container sticky-element">
                                 <h4 style="text-align: center;">Reference Audio:</h4>
                                 <audio controls>
                                     <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare2.wav?raw=true" type="audio/mpeg">
@@ -569,7 +569,7 @@ name: listening_test
                                 </div>
                                 <!-- Cross Correlation -->
                                 <div class="flex column filled-container">
-                                    <h4 style="text-align: center;">G</h4>
+                                    <h4 style="text-align: center;">H</h4>
                                     <audio controls>
                                         <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_correlation_snare2.wav?raw=true" type="audio/mpeg">
                                         Your browser does not support the audio element.
@@ -591,7 +591,7 @@ name: listening_test
                             <h2>Test 4</h2>
                             <p>In the following section, you will listen to another set of snare samples. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
                             <br>
-                            <div class="filled-container">
+                            <div class="filled-container sticky-element">
                                 <h4 style="text-align: center;">Reference Audio:</h4>
                                 <audio controls>
                                     <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare3.wav?raw=true" type="audio/mpeg">
@@ -736,7 +736,7 @@ name: listening_test
                                 </div>
                                 <!-- Cross Spectrum -->
                                 <div class="flex column filled-container">
-                                    <h4 style="text-align: center;">G</h4>
+                                    <h4 style="text-align: center;">H</h4>
                                     <audio controls>
                                         <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_spectrum_snare3.wav?raw=true" type="audio/mpeg">
                                         Your browser does not support the audio element.
@@ -757,12 +757,12 @@ name: listening_test
 
                             <br>
 
+                            <p><em>Please make sure to submit your results below before exiting the test.</em></p>
+
                             <input type="hidden" name="_autoresponse" value="Thank you for participating in this listening test!">
                             <input type="hidden" name="_next" value="{{ site.url }}/apa_listening_test_submit.html">
-                            <button type="submit" class="button">Send</button>
+                            <button type="submit" class="button">Submit Results</button>
                         </form>
-
-                        <!-- Thank you for participating in this listening test. -->
                     </div>
                   </section>
               </main>
