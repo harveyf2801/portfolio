@@ -47,9 +47,8 @@ name: listening_test
 </style>
 <script>
     function dBtoGain(dB) {
-    return Math.pow(10, dB / 20);
+        return Math.pow(10, dB / 20);
     }
-
     document.onreadystatechange = () => {
     if (document.readyState === "complete") {
         var audioElements = document.getElementsByTagName("audio");
@@ -63,7 +62,7 @@ name: listening_test
 
         var anchor2 = document.getElementsByClassName("anchor2");
         for (var i = 0; i < anchor2.length; i++) {
-            anchor2[i].volume = 0.05;
+            anchor2[i].volume = 0.03;
         }
     }
 };
@@ -85,7 +84,7 @@ name: listening_test
 
                             <br>
 
-                            <p>Please enter your age (You must be 18 or over to complete this test):</p>
+                            <p>Please enter your age (<i>you must be 18 or over to complete this test</i>):</p>
                             <input type="number" name="Age" placeholder="Age " mandatory="true" min="18">
                             <input type="hidden" name="_subject" value="Listening Test">
 
