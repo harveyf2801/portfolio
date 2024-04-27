@@ -182,5 +182,5 @@ function setupTypewriter(t) {
 }
 
 var typer = document.getElementById('typewriter');
-typewriter = setupTypewriter(typewriter);
+typewriter = setupTypewriter(typer);
 typewriter.type();

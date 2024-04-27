@@ -1,0 +1,765 @@
+---
+layout: hero
+permalink: /apa_listening_test.html
+title: Listening Test | Harvey Fretwell
+name: listening_test
+---
+
+<style>
+    .range {
+  --ticksThickness: 2px;
+  --ticksHeight: 30%;
+  --ticksColor: silver;
+  
+  display: inline-block;
+  background: silver;
+  background: linear-gradient(to right, var(--ticksColor) var(--ticksThickness), transparent 1px) repeat-x;
+  background-size: calc(100%/((var(--max) - var(--min)) / var(--step)) - .1%) var(--ticksHeight);
+  background-position: 0 bottom;
+  position: relative;
+    }
+
+
+    /* min / max labels at the edges */
+    .range::before, .range::after {
+    font: 12px monospace;
+    content: counter(x);
+    position: absolute;
+    bottom: -2ch;
+    }
+
+    .range::before {
+    counter-reset: x var(--min);
+    transform: translateX(-50%);
+    }
+
+    .range::after {
+    counter-reset: x var(--max);
+    right: 0;
+    transform: translateX(50%);
+    }
+
+
+    .range > input {
+    width: 300px;
+    margin: 0 -6px; /* Critical adjustment */
+    }
+</style>
+<script>
+    function dBtoGain(dB) {
+    return Math.pow(10, dB / 20);
+    }
+
+    document.onreadystatechange = () => {
+    if (document.readyState === "complete") {
+        var audioElements = document.getElementsByTagName("audio");
+        for (var i = 0; i < audioElements.length; i++) {
+            audioElements[i].volume = 0.3;
+        }
+        var anchor1 = document.getElementsByClassName("anchor1");
+        for (var i = 0; i < anchor1.length; i++) {
+            anchor1[i].volume = 1;
+        }
+
+        var anchor2 = document.getElementsByClassName("anchor2");
+        for (var i = 0; i < anchor2.length; i++) {
+            anchor2[i].volume = 0.05;
+        }
+    }
+};
+</script>
+              <main class="flex column">
+                  <section>
+                    <div>
+                        <h3>Harvey Fretwell</h3>
+                        <h1>Listening Test</h1>
+
+                        <form class="contact-form" action="https://formsubmit.co/8e1efc56c8f3e690624dbcc591ca0f8d" method="POST">
+                            <h2>Questions</h2>
+                            <p>Have you been provided with the information sheet and have you completed the consent form?</p>
+                            <div>
+                                Yes  <input type="radio" name="Consent Form Completed" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="Consent Form Completed" value="no" required>
+                            </div>
+                            <!-- <input type="checkbox" name="Consent Form Completed" required> -->
+
+                            <br>
+
+                            <p>Please enter your age (You must be 18 or over to complete this test):</p>
+                            <input type="number" name="Age" placeholder="Age " mandatory="true" min="18">
+                            <input type="hidden" name="_subject" value="Listening Test">
+
+                            <br>
+
+                            <p>On a scale from 0 to 10, where 0 indicates no knowledge or expertise in audio and 10 indicates extensive knowledge or professional experience in audio-related fields, how would you rate your level of expertise in audio?</p>
+                            <div class="range" style="--step:1; --min:0; --max:10">
+                                <input type="range" required name="Level of Audio Expertise" min="0" max="10" step="1" value="5">
+                            </div>
+
+                            <br>
+
+                            <p>Prior to starting the test, ensure that your headphones are set to a low volume. As you begin, gradually adjust the volume to a comfortable level. Please maintain this volume level throughout the test. Any potential damage resulting from volume adjustment is the participant's responsibility, and the researchers are not liable. If you have any further questions, please ask the researcher now.</p>
+                            
+                            <h2>Information</h2>
+                            <p>In the following tests, you will be provided with a reference track and a series of test tracks. Please evaluate each test track based on how its perceived loudness and quality compare to the reference track. Play the reference track first before every test track, and ensure that you listen to each track in full before providing your evaluation.</p>
+
+                            <p>On the loudness scale, -10 would be interpreted as the test track being significantly quieter than the reference, 0 would mean there was no difference between the two, and +10 would represent a significant increase in loudness.</p>
+
+                            <p>When evaluating quality, -10 represents a significant decline in quality (for example: strange artifacts, noise, or distortion have occurred). Again, 0 represents no changes, and +10 would be interpreted as the quality being significantly improved.</p>
+
+                            <h2>Test 1</h2>
+                            <p>In the following section, you will listen to several sine waves. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
+                            <br>
+                            <h4 style="text-align: center;">Reference Audio:</h4>
+                            <audio controls>
+                                <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_sine.wav?raw=true" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Anchor 1 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">A</h4>
+                                    <audio controls class="anchor1">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/6bit_sine.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Phase Difference Analysis -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">B</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_difference_analysis_sine.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Anchor 2 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">C</h4>
+                                    <audio controls class="anchor2">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/4bit_sine.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Cross Spectrum -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">D</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_spectrum_sine.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Cross Correlation -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">E</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_correlation_sine.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Hidden Reference -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">F</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_sine.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Phase Vocoder -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">G</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_vocoder_sine.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Sine Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <h2>Test 2</h2>
+                            <p>In the following section, you will listen to several snare samples. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
+                            <br>
+                            <h4 style="text-align: center;">Reference Audio:</h4>
+                            <audio controls>
+                                <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare1.wav?raw=true" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Hidden Reference -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">A</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Cross Correlation -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">B</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_correlation_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Cross Spectrum -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">C</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_spectrum_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Anchor 1 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">D</h4>
+                                    <audio controls class="anchor1">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/6bit_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Phase Difference Analysis -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">E</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_difference_analysis_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Anchor 2 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">F</h4>
+                                    <audio controls class="anchor2">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/4bit_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Phase Vocoder -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">G</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_vocoder_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Model -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">G</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/model_snare1.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Model Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 1 Model Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <h2>Test 3</h2>
+                            <p>In the following section, you will listen to another set of snare samples. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
+                            <br>
+                            <h4 style="text-align: center;">Reference Audio:</h4>
+                            <audio controls>
+                                <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare2.wav?raw=true" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Phase Difference Analysis -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">A</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_difference_analysis_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Phase Vocoder -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">B</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_vocoder_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Model -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">C</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/model_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Model Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Model Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Hidden Reference -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">D</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Anchor 1 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">E</h4>
+                                    <audio controls class="anchor1">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/6bit_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Anchor 2 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">F</h4>
+                                    <audio controls class="anchor2">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/4bit_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Cross Spectrum -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">G</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_spectrum_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Cross Correlation -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">G</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_correlation_snare2.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 2 Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <h2>Test 4</h2>
+                            <p>In the following section, you will listen to another set of snare samples. Please evaluate each test sample based on how the perceived loudness and quality compares to the reference audio.</p>
+                            <br>
+                            <h4 style="text-align: center;">Reference Audio:</h4>
+                            <audio controls>
+                                <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare3.wav?raw=true" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Anchor 2 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">A</h4>
+                                    <audio controls class="anchor2">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/4bit_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Anchor 1 -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">B</h4>
+                                    <audio controls class="anchor1">
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/6bit_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Phase Vocoder -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">C</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_vocoder_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Cross Correlation -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">D</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_correlation_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="flex row nowrap" style="gap: 2em;">
+                                <!-- Hidden Reference -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">E</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/ref_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Model -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">F</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/model_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Model Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Model Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Phase Difference Analysis -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">G</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/phase_difference_analysis_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                                <!-- Cross Spectrum -->
+                                <div class="flex column filled-container">
+                                    <h4 style="text-align: center;">G</h4>
+                                    <audio controls>
+                                        <source src="https://github.com/harveyf2801/WebAudioEvaluationTool/blob/master/media/APA/cross_spectrum_snare3.wav?raw=true" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                    <br>
+                                    <p style="text-align: center;">Loudness</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                    <p style="text-align: center;">Quality</p>
+                                    <div class="range" style="--step:4.8; --min:-10; --max:10">
+                                        <input type="range" required name="Snare 3 Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <input type="hidden" name="_autoresponse" value="Thank you for your message! I'll try to get back to you as quickly as possible.">
+                            <input type="hidden" name="_next" value="{{ site.url }}{{ site.baseurl }}/index.html">
+                            <button type="submit" class="button">Send</button>
+                        </form>
+
+                        <!-- Thank you for participating in this listening test. -->
+                    </div>
+                  </section>
+              </main>

@@ -339,10 +339,10 @@
 	-ms-flex-pack: center;
 	justify-content: center;
 	margin-top: 2rem;
-	>* :not(button){
+	>input, textarea :not(button){
 		border-bottom: var(--clr-text) solid 0.2rem;
 	}
-	>*{
+	>input, textarea{
 		outline: none;
 		background-color: transparent;
 		padding: 0.8rem;
