@@ -167,12 +167,25 @@
 .sticky-element {
 	position: -webkit-sticky; /* For Safari */
 	position: sticky;
-	top: 0;
-	z-index: 1000; /* Set a high z-index value to keep it at the front */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
   }
 
   .sticky {
 	position: -webkit-sticky; /* For Safari */
 	position: sticky;
 	top: 0;
+	z-index: 1000; /* Set a high z-index value to keep it at the front */
+  }
+
+.parent-sticky {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
   }

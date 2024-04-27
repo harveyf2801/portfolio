@@ -185,9 +185,10 @@ function setupTypewriter(t) {
 	};
 }
 
-const refObserver = new IntersectionObserver(entries => {
+const stickyObserver = new IntersectionObserver(entries => {
 	entries.forEach(entry => {
-	  const stickyElement = entry.target;
+	  const parentSticky = entry.target;
+	  const stickyElement = parentSticky.querySelector('.sticky-element');
 	  if (entry.isIntersecting) {
 		stickyElement.classList.add('sticky');
 	  } else {
@@ -196,9 +197,11 @@ const refObserver = new IntersectionObserver(entries => {
 	});
   });
   
-  document.querySelectorAll('.sticky-element').forEach(element => {
-	refObserver.observe(element);
+  document.querySelectorAll('.parent-sticky').forEach(parentSticky => {
+	stickyObserver.observe(parentSticky);
   });
+  
+  
 
 var typer = document.getElementById('typewriter');
 if (typer) {
