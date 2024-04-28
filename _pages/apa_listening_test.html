@@ -73,26 +73,27 @@ name: listening_test
                         <h3>Harvey Fretwell</h3>
                         <h1>Listening Test</h1>
 
-                        <form class="contact-form" action="https://formsubmit.co/8e1efc56c8f3e690624dbcc591ca0f8d" method="POST">
+                        <form class="contact-form" action="https://api.staticforms.xyz/submit" method="POST">
+                            <input type="hidden" name="accessKey" value="500a9761-9902-46f7-aefe-20425f6eb2f8"> <!-- Required -->
+
                             <h2>Questions</h2>
                             <p>Have you been provided with the information sheet and have you completed the consent form?</p>
                             <div>
-                                Yes  <input type="radio" name="Consent Form Completed" value="yes" required>  
-                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="Consent Form Completed" value="no" required>
+                                Yes  <input type="radio" name="$Consent_Form_Completed" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="$Consent_Form_Completed" value="no" required>
                             </div>
                             <!-- <input type="checkbox" name="Consent Form Completed" required> -->
 
                             <br>
 
                             <p>Please enter your age (<i>you must be 18 or over to complete this test</i>):</p>
-                            <input type="number" name="Age" placeholder="Age " mandatory="true" min="18">
-                            <input type="hidden" name="_subject" value="Listening Test">
+                            <input type="number" name="$Age" placeholder="Age " mandatory="true" min="18">
 
                             <br>
 
                             <p>On a scale from 0 to 10, where 0 indicates no knowledge or expertise in audio and 10 indicates extensive knowledge or professional experience in audio-related fields, how would you rate your level of expertise in audio?</p>
                             <div class="range" style="--step:1; --min:0; --max:10">
-                                <input type="range" required name="Level of Audio Expertise" min="0" max="10" step="1" value="5">
+                                <input type="range" required name="$Level_of_Audio_Expertise" min="0" max="10" step="1" value="5">
                             </div>
 
                             <br>
@@ -130,12 +131,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Anchor_1_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Anchor_1_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -149,12 +150,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Phase_Difference_Analysis_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Phase_Difference_Analysis_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -168,12 +169,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Anchor_2_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Anchor_2_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -187,12 +188,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Cross_Spectrum_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Cross_Spectrum_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -207,12 +208,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Cross_Correlation_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Cross_Correlation_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -226,12 +227,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Hidden_Reference_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Hidden_Reference_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -245,12 +246,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Phase_Vocoder_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Sine Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Sine_Phase_Vocoder_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -280,12 +281,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Hidden_Reference_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Hidden_Reference_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -299,12 +300,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Cross_Correlation_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Cross_Correlation_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -318,12 +319,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Cross_Spectrum_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Cross_Spectrum_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -337,12 +338,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Anchor_1_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Anchor_1_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -357,12 +358,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Phase_Difference_Analysis_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Phase_Difference_Analysis_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -376,12 +377,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Anchor_2_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Anchor_2_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -395,12 +396,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Phase_Vocoder_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Phase_Vocoder_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -414,12 +415,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Model Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Model_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 1 Model Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_1_Model_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -449,12 +450,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Phase_Difference_Analysis_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Phase_Difference_Analysis_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -468,12 +469,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Phase_Vocoder_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Phase_Vocoder_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -487,12 +488,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Model Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Model_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Model Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Model_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -506,12 +507,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Hidden_Reference_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Hidden_Reference_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -526,12 +527,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Anchor_1_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Anchor_1_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -545,12 +546,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Anchor_2_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Anchor_2_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -564,12 +565,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Cross_Spectrum_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Cross_Spectrum_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -583,12 +584,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Cross_Correlation_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 2 Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_2_Cross_Correlation_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -618,12 +619,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Anchor 2 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Anchor_2_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Anchor 2 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Anchor_2_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -637,12 +638,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Anchor 1 Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Anchor_1_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Anchor 1 Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Anchor_1_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -656,12 +657,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Phase Vocoder Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Phase_Vocoder_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Phase Vocoder Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Phase_Vocoder_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -675,12 +676,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Cross Correlation Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Cross_Correlation_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Cross Correlation Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Cross_Correlation_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -695,12 +696,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Hidden Reference Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Hidden_Reference_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Hidden Reference Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Hidden_Reference_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -714,12 +715,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Model Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Model_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Model Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Model_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -733,12 +734,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Phase Difference Analysis Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Phase_Difference_Analysis_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Phase Difference Analysis Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Phase_Difference_Analysis_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -752,12 +753,12 @@ name: listening_test
                                     <br>
                                     <p style="text-align: center;">Loudness</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Cross Spectrum Loudness" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Cross_Spectrum_Loudness" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                     <p style="text-align: center;">Quality</p>
                                     <div class="range" style="--step:4.8; --min:-10; --max:10">
-                                        <input type="range" required name="Snare 3 Cross Spectrum Quality" min="0" max="100" step="1" value="50">
+                                        <input type="range" required name="$Snare_3_Cross_Spectrum_Quality" min="0" max="100" step="1" value="50">
                                     </div>
                                     <br>
                                 </div>
@@ -767,9 +768,9 @@ name: listening_test
                             <br>
 
                             <p><em>Please make sure to submit your results below before exiting the test.</em></p>
-
-                            <input type="hidden" name="_autoresponse" value="Thank you for participating in this listening test!">
-                            <input type="hidden" name="_next" value="{{ site.url }}/apa_listening_test_submit.html">
+                            
+                            <input type="hidden" name="subject" value="Listening Test">
+                            <input type="hidden" name="redirectTo" value="{{ site.url }}/apa_listening_test_submit.html">
                             <button type="submit" class="button">Submit Results</button>
                         </form>
                     </div>

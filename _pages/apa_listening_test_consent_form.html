@@ -34,13 +34,14 @@ name: listening_test_consent_form
                         </div>
                         <br>
 
-                        <form class="contact-form" action="https://formsubmit.co/8e1efc56c8f3e690624dbcc591ca0f8d" method="POST">
+                        <form class="contact-form" action="https://api.staticforms.xyz/submit" method="POST">
                             <!-- <input type="file" id="consent_form_upload" name="Consent Form Upload"> -->
+                            <input type="hidden" name="accessKey" value="500a9761-9902-46f7-aefe-20425f6eb2f8"> <!-- Required -->
 
                             <p>Have you read and understood the information sheet inviting you to participate in this research?</p>
                             <div>
-                                Yes  <input type="radio" name="Have you read and understood the information sheet inviting you to participate in this research?" value="yes" required>  
-                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="Have you read and understood the information sheet inviting you to participate in this research?" value="no" required>
+                                Yes  <input type="radio" name="$Have_you_read_and_understood_the_information_sheet_inviting_you_to_participate_in_this_research?" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="$Have_you_read_and_understood_the_information_sheet_inviting_you_to_participate_in_this_research?" value="no" required>
                             </div>
                             <!-- <input type="checkbox" name="Have you read and understood the information sheet inviting you to participate in this research?" unchecked> -->
 
@@ -48,8 +49,8 @@ name: listening_test_consent_form
 
                             <p>Have you been given the opportunity to ask any questions you have about the research?</p>
                             <div>
-                                Yes  <input type="radio" name="Have you been given the opportunity to ask any questions you have about the research?" value="yes" required>  
-                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="Have you been given the opportunity to ask any questions you have about the research?" value="no" required>
+                                Yes  <input type="radio" name="$Have_you_been_given_the_opportunity_to_ask_any_questions_you_have_about_the_research?" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="$Have_you_been_given_the_opportunity_to_ask_any_questions_you_have_about_the_research?" value="no" required>
                             </div>
                             <!-- <input type="checkbox" name="Have you been given the opportunity to ask any questions you have about the research?" unchecked> -->
 
@@ -57,8 +58,8 @@ name: listening_test_consent_form
 
                             <p>Do you agree to participate in the research, as outlined in the information sheet?</p>
                             <div>
-                                Yes  <input type="radio" name="Do you agree to participate in the research, as outlined in the information sheet?" value="yes" required>  
-                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="Do you agree to participate in the research, as outlined in the information sheet?" value="no" required>
+                                Yes  <input type="radio" name="$Do_you_agree_to_participate_in_the_research,_as_outlined_in_the_information_sheet?" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="$Do_you_agree_to_participate_in_the_research,_as_outlined_in_the_information_sheet?" value="no" required>
                             </div>
                             <!-- <input type="checkbox" name="Do you agree to participate in the research, as outlined in the information sheet?" unchecked> -->
 
@@ -66,8 +67,8 @@ name: listening_test_consent_form
 
                             <p>Do you understand that you are free to withdraw from the study without giving reasons?</p>
                             <div>
-                                Yes  <input type="radio" name=">Do you understand that you are free to withdraw from the study without giving reasons?" value="yes" required>  
-                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name=">Do you understand that you are free to withdraw from the study without giving reasons?" value="no" required>
+                                Yes  <input type="radio" name="$Do_you_understand_that_you_are_free_to_withdraw_from_the_study_without_giving_reasons?" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="$Do_you_understand_that_you_are_free_to_withdraw_from_the_study_without_giving_reasons?" value="no" required>
                             </div>
                             <!-- <input type="checkbox" name="Do you understand that you are free to withdraw from the study without giving reasons?" unchecked> -->
 
@@ -75,8 +76,8 @@ name: listening_test_consent_form
 
                             <p>Do you give permission for the researcher and their supervisor named above to have access to the data provided by you?</p>
                             <div>
-                                Yes  <input type="radio" name="Do you give permission for the researcher and their supervisor named above to have access to the data provided by you?" value="yes" required>  
-                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="Do you give permission for the researcher and their supervisor named above to have access to the data provided by you?" value="no" required>
+                                Yes  <input type="radio" name="$Do_you_give_permission_for_the_researcher_and_their_supervisor_named_above_to_have_access_to_the_data_provided_by_you?" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="$Do_you_give_permission_for_the_researcher_and_their_supervisor_named_above_to_have_access_to_the_data_provided_by_you?" value="no" required>
                             </div>
                             <!-- <input type="checkbox" name="Do you give permission for the researcher and their supervisor named above to have access to the data provided by you?" unchecked> -->
 
@@ -84,21 +85,20 @@ name: listening_test_consent_form
 
                             <p>Do you understand that the data collected from you will be anonymised, securely stored during the research and securely destroyed at the end of the study?</p>
                             <div>
-                                Yes  <input type="radio" name="Do you understand that the data collected from you will be anonymised, securely stored during the research and securely destroyed at the end of the study?" value="yes" required>  
-                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="Do you understand that the data collected from you will be anonymised, securely stored during the research and securely destroyed at the end of the study?" value="no" required>
+                                Yes  <input type="radio" name="$Do_you_understand_that_the_data_collected_from_you_will_be_anonymised,_securely_stored_during_the_research_and_securely_destroyed_at_the_end_of_the_study?" value="yes" required>  
+                                &nbsp&nbsp&nbsp&nbsp No  <input type="radio" name="$Do_you_understand_that_the_data_collected_from_you_will_be_anonymised,_securely_stored_during_the_research_and_securely_destroyed_at_the_end_of_the_study?" value="no" required>
                             </div>
                             <!-- <input type="checkbox" name="Do you understand that the data collected from you will be anonymised, securely stored during the research and securely destroyed at the end of the study?" unchecked> -->
 
                             <br>
                             
                             <p>Signature of Participant</p>
-                            <input type="text" name="Signature of Participant" placeholder="Full Name" required>
+                            <input type="text" name="$Signature_of_Participant" placeholder="Full Name" required>
                             <p>Date</p>
-                            <input type="date" name="Date" required>
-                            <input type="hidden" name="_subject" value="APA Consent Form">
-                            
-                            <input type="hidden" name="_autoresponse" value="Thank you for completing the consent form. You should now be re-directed to the test.">
-                            <input type="hidden" name="_next" value="{{ site.url }}/apa_listening_test.html">
+                            <input type="date" name="$Date" required>
+
+                            <input type="hidden" name="subject" value="APA Consent Form">
+                            <input type="hidden" name="redirectTo" value="{{ site.url }}/apa_listening_test.html">
                             <button type="submit" class="button">Submit</button>
                         </form>
                                                 

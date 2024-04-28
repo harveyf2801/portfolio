@@ -9,15 +9,18 @@ name: contact
                     <div>
                         <h3>Harvey Fretwell</h3>
                         <h1>Get In Touch!</h1>
-                        <form class="contact-form" action="https://formsubmit.co/hgfretwell@gmail.com" method="POST">
+                        <form class="contact-form" action="https://api.staticforms.xyz/submit" method="POST">
+                            <input type="hidden" name="accessKey" value="500a9761-9902-46f7-aefe-20425f6eb2f8"> <!-- Required -->
                             <input type="email" name="email" placeholder="Email Address">
-                            <input type="hidden" name="_subject" value="Contact from Portfolio Website">
                             <input type="text", name="name" placeholder="Full Name" required>
                             <textarea name="message" rows="10" placeholder="Message" required></textarea>
-                            <input type="hidden" name="_autoresponse" value="Thank you for your message! I'll try to get back to you as quickly as possible.">
-                            <input type="hidden" name="_next" value="{{ site.url }}/index.html">
+                            <input type="range" name="$test_range" min="0" max="100">
+
+                            <input type="hidden" name="subject" value="Contact from Portfolio Website">
+                            <input type="hidden" name="redirectTo" value="{{ site.url }}/index.html">
                             <button type="submit" class="button">Send</button>
                         </form>
+                        <!-- 500a9761-9902-46f7-aefe-20425f6eb2f8 -->
                     </div>
                   </section>
               </main>
