@@ -36,14 +36,17 @@ function navShow(currentScroll) {
 	if (navbar){
 		if (!menuopen) {
 			if (currentScroll <= 0 && !navbar.classList.contains("scroll-down")) {
+				// if the window is scrolled to the top and the navigation is not visible
 				navbar.classList.remove("scroll-up");
 				navbar.classList.remove("scroll-down");
 			}
 			if (currentScroll > lastScroll && !navbar.classList.contains("scroll-down")) {
+				// if the window is scrolled down and the navigation is not visible
 				navbar.classList.remove("scroll-up");
 				navbar.classList.add("scroll-down");
 			}
 			if (currentScroll < lastScroll && navbar.classList.contains("scroll-down")) {
+				// if the window is scrolled up and the navigation is visible
 				navbar.classList.remove("scroll-down");
 				navbar.classList.add("scroll-up");
 			}
@@ -54,7 +57,7 @@ function navShow(currentScroll) {
 
 function toTopScroll(currentScroll) {
 	if (toTopBtn) {
-		if (currentScroll > 20 || currentScroll > 20) {
+		if (currentScroll > 20) {
 			toTopBtn.style.display = "block";
 		} else {
 			toTopBtn.style.display = "none";

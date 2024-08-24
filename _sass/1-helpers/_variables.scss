@@ -76,15 +76,15 @@
     /* @link https://www.happyhues.co/palettes/4 */
 
     /* THEME COLOURS */
-    --color-main: #7f5af0ba;
-    --color-tertiary: #2cadb6c5;
+    --color-main: #5200e2ba;
+    --color-tertiary: #2cadf4c5;
 
-    --color-light-3: #EEEEEE;
+    --color-light-3: #eaeaf1;
     --color-light-2: #9d9c9c;
-    --color-light-1: #686868;
-    --color-dark-1: #242629; /* X */
-    --color-dark-2: #16161a; /* X */
-    --color-dark-3: #111111;
+    --color-light-1: #686868; /* X */
+    --color-dark-1: #242629;  /* X */
+    --color-dark-2: #16161a;
+    --color-dark-3: #020306;
 
     /* GLOBAL COLOURS */
     --color-success: #13ad37;
@@ -94,10 +94,10 @@
 
     /* COLOURS */
 	--clr-text: var(--color-dark-3);
-	--clr-text-light: var(--color-light-1);
+	--clr-text-light: var(--color-dark-2);
 	--clr-background: var(--color-light-3);
 	--clr-text-overlay: var(--color-light-3);
-	--clr-overlay: #111111d7;
+	--clr-overlay: #020306d7;
 	--clr-logo: var(--color-dark-3);
 
 /* TIME VARIABLES */
@@ -114,8 +114,11 @@
     --clr-text: var(--color-light-3);
     --clr-background: var(--color-dark-3);
     --clr-text-overlay: var(--color-dark-3);
-    --clr-overlay: #eeeeeeb9;
+    --clr-overlay: #eaeaf1b9;
     --clr-text-light: var(--color-light-2);
+
+    --color-tertiary: #5200e2ba;
+    --color-main: #2cadf4c5;
 }
 
 /* Light mode */
